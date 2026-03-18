@@ -21,7 +21,7 @@ fun main() = application {
 
 @Composable
 private fun App() {
-    var text by remember { mutableStateOf("Task7") }
+    var text by remember { mutableStateOf("Task17") }
     val tasks = remember { mutableStateListOf<String>() }
     var selectedIndex by remember { mutableStateOf<Int?>(null) }
     var errorMessage by remember { mutableStateOf("") }
