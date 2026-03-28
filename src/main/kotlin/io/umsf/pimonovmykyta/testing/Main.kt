@@ -15,7 +15,7 @@ import androidx.compose.ui.window.application
 
 fun main() = application {
     Window(onCloseRequest = ::exitApplication, title = "To-Do List") {
-        InvalidApp()
+        App()
     }
 }
 
@@ -58,13 +58,8 @@ private fun App() {
                 Spacer(modifier = Modifier.width(8.dp))
 
                 Button(onClick = {
-                    if (selectedIndex == null || selectedIndex!! !in tasks.indices) {
-                        errorMessage = "Оберіть задачу для видалення"
-                    } else {
-                        tasks.removeAt(selectedIndex!!)
-                        selectedIndex = null
-                        errorMessage = ""
-                    }
+                    tasks.removeAt(selectedIndex!!)
+                    selectedIndex = null
                 }) {
                     Text("Видалити")
                 }
