@@ -58,8 +58,13 @@ private fun App() {
                 Spacer(modifier = Modifier.width(8.dp))
 
                 Button(onClick = {
-                    tasks.removeAt(selectedIndex!!)
-                    selectedIndex = null
+                    if (selectedIndex == null || selectedIndex!! !in tasks.indices) {
+                        errorMessage = "Оберіть задачу для видалення"
+                    } else {
+                        tasks.removeAt(selectedIndex!!)
+                        selectedIndex = null
+                        errorMessage = ""
+                    }
                 }) {
                     Text("Видалити")
                 }
